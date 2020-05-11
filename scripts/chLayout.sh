@@ -8,22 +8,21 @@
 
 layouts=($@)
 layout=`setxkbmap -print -v 10 | grep -oP '(?<=layout:     ).*'`
-langmap_amt=`echo ${layouts[*]} | wc -w`
 i=0
 
 ch_lyt(){
 	setxkbmap -layout $1
 }
 
-[ $langmap_amt == 0 ] && exit
+[ ${#layouts[@]} == 0 ] && exit
 
 until [ $layout == ${layouts[$i]} ]; do
 	let i=$i+1
-	[ $i -gt $langmap_amt ] && let i=-1 && break 
+	[ $i -gt ${#layouts[@]} ] && let i=-1 && break
 done
 
 let i=$i+1
 
-[ $i == $langmap_amt ] && let i=0
+[ $i == ${#layouts[@]} ] && let i=0
 
 ch_lyt ${layouts[$i]}
