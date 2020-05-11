@@ -8,7 +8,6 @@
 
 layouts=($@)
 layout=`setxkbmap -print -v 10 | grep -oP '(?<=layout:     ).*'`
-i=0
 
 ch_lyt(){
 	setxkbmap -layout $1
@@ -16,13 +15,10 @@ ch_lyt(){
 
 [ ${#layouts[@]} == 0 ] && exit
 
-until [ $layout == ${layouts[$i]} ]; do
-	let i=$i+1
-	[ $i -gt ${#layouts[@]} ] && let i=-1 && break
+for i in ${!layouts[@]}; do
+	[ ${layouts[$i]} == $layout ] && break
 done
 
-let i=$i+1
-
-[ $i == ${#layouts[@]} ] && let i=0
+let i=$i+1; [ $i == ${#layouts[@]} ] && let i=0
 
 ch_lyt ${layouts[$i]}
