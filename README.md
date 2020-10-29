@@ -2,6 +2,14 @@
 
 Some simple scripts which may prove useful to some people.
 
+## Some notes on installation
+* Clone the repository with git clone as usual (wherever you prefer)
+* It is possible to install with stow, more specifically:
+```
+stow */ -t $HOME/bin/
+```
+* -t here specifies the target directory. Look at man stow if you want other options
+
 ## chLayout -- to change the layout
 * A simple script that changes the current x server layout based on the previous one in the layouts array.
 * Usage: /pathtoscript/chLayout.sh us gb
