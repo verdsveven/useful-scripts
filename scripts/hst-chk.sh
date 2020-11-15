@@ -1,3 +1,4 @@
+#!/bin/sh
 # Script that checks the hostname for including $hst_type
 # Exits with success if it includes the string; with failure if not
 # To be used in combination with other scripts e.g: [ hst-chk.sh laptop ] && laptop.sh
