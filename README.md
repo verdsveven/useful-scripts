@@ -35,3 +35,6 @@ stow */ -t $HOME/bin/
 * Alternatively: sudo /pathtoscript/domain_block.sh $(cat domains.txt)
 * NB!: do not edit the /etc/hosts file while the script is working, it will overwrite changes
 * If there are no domains given, it exits
+
+## smount.sh -- simple mount
+* Mounts disks or SMB shares
