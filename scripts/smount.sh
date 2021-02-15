@@ -33,7 +33,7 @@ else
 	d=true
 fi
 
-[ $d = true ] && [ -z $drive ] && read -ep "Please enter drive directory: " drive
+[ "$d" = "true" ] && [ -z $drive ] && read -ep "Please enter drive directory: " drive
 [ -n $drive ] && cmd="$cmd $drive"
 
 [ -z $mountpoint ] && read -ep "Please enter mount directory: " mountpoint 
