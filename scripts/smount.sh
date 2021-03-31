@@ -22,7 +22,7 @@ done
 if [ -z "$t" ]; then
 	d=true
 
-elif [ "$t" = "cifs" ]; then
+elif [ "$t" == "cifs" ]; then
 	[ -z $address ] && read -ep "Please enter IP of server: " address
 	[ -z $share ] && read -ep "Please enter share to mount: " share
 	[ -z $user ] && read -ep "Please enter share username: " user
@@ -33,7 +33,7 @@ else
 	d=true
 fi
 
-[ "$d" = "true" ] && [ -z $drive ] && read -ep "Please enter drive directory: " drive
+[ "$d" == true ] && [ -z $drive ] && read -ep "Please enter drive directory: " drive
 [ -n $drive ] && cmd="$cmd $drive"
 
 [ -z $mountpoint ] && read -ep "Please enter mount directory: " mountpoint 
