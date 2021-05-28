@@ -3,12 +3,26 @@
 Some simple scripts which may prove useful to some people.
 
 ## Some notes on installation
-* Clone the repository with git clone as usual (wherever you prefer)
-* It is possible to install with stow, more specifically:
+* The (re/un)install process is automated with a very simple Makefile utilising GNU stow commands (see Makefile)
+
+### General instructions:
+* Clone the repository with git clone (wherever you prefer)
+* cd into the directory wherein the repository was cloned and run the following commands depending on use case:
+
+### To install:
+```sh
+make install
 ```
-stow */ -t $HOME/bin/
+
+### To uninstall:
+```sh
+make uninstall
 ```
-* -t here specifies the target directory. Look at man stow if you want other options
+
+### To apply changes after pulling (reinstall):
+```sh
+make reinstall
+```
 
 ## chLayout -- changes the layout
 * A simple script that changes the current x server layout based on the previous one in the layouts array.
