@@ -27,7 +27,7 @@ elif [ "$t" == "cifs" ]; then
 	[ -z $share ] && read -ep "Please enter share to mount: " share
 	[ -z $user ] && read -ep "Please enter share username: " user
 
-	cmd="-t $t //$address/$share -o username=$user"
+	cmd="-t $t //$address/$share -o username=$user,uid=$(id -u)"
 else
 	cmd="-t $t"
 	d=true
